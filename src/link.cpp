@@ -22,12 +22,11 @@ std::string add_url(std::string org) {
   SHA1(orgurl, sizeof(orgurl)-1, hash);
 
   char hashhex[SHA_DIGEST_LENGTH+SHA224_DIGEST_LENGTH];
+  char current[3];
+
   for(int i = 0; i < SHA_DIGEST_LENGTH; i++){
-    if(i == 0){
-      sprintf(hashhex, "%02x", hash[i]);
-      continue;
-    }
-    sprintf(hashhex, "%s%02x", hashhex, hash[i]);
+    sprintf(current, "%02x", hash[i]);
+    strncpy(hashhex+(i*2), current, 2);
   }
 
   std::string hashstr(hashhex);

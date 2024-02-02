@@ -25,5 +25,5 @@ RUN make && rm -r crow
 FROM alpine as main
 COPY --from=build /app /
 EXPOSE 8080 
-RUN apk add --no-cache libstdc++ libgcc openssl 
+RUN apk add --no-cache libstdc++ libgcc libcrypto3 
 ENTRYPOINT ["/kisalt"]
