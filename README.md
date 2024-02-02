@@ -18,7 +18,7 @@ Change the `URL` accordingly.
 ### Usage
 You can use the web interface to shorten links, or you can directly use the API:
 ```bash
-curl https://k.example.com/add?url=<url>
+curl https://k.example.com/add\?url=<url>
 ```
 
 ### Todo
