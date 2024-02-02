@@ -4,7 +4,6 @@
 #include <crow.h>
 #include <random>
 
-std::string envpwd = nullptr==getenv("PASSWORD") ? "password" : getenv("PASSWORD");
 std::string envurl = nullptr==getenv("URL") ? "http://127.0.0.1:8080/" : getenv("URL");
 
 std::string join_url(std::string url) {
@@ -18,29 +17,28 @@ int main(){
   app.loglevel(crow::LogLevel::Warning);
   
   CROW_ROUTE(app, "/add")([](const crow::request& req, crow::response& res){
-    char* pwd = req.url_params.get("pwd");
     char* url = req.url_params.get("url");
 
-    if(nullptr == url || nullptr == pwd) {
+    if(nullptr == url) {
       res.code = 400;
       res.write("Provide a URL and a password");
       return res.end();
     }
 
-    if(envpwd.compare(pwd)!=0){
-      res.code = 403;
-      res.write("Bad password");
+    std::string urlstr(url);
+    if(urlstr.length() > 7500) {
+      res.code = 400;
+      res.write("URL is too large");
       return res.end();
     }
-
-    std::string url_str(url);
-    if(url_str.rfind("http://", 0) != 0 && url_str.rfind("https://", 0) != 0){
+    
+    if(urlstr.rfind("http://", 0) != 0 && urlstr.rfind("https://", 0) != 0){
       res.code = 400;
       res.write("Bad URL");
       return res.end();
     }
 
-    std::string newurl = add_url(url_str);
+    std::string newurl = add_url(urlstr);
     res.write(join_url(newurl));
     return res.end();
   });

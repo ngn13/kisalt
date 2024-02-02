@@ -1,7 +1,7 @@
 FROM alpine as build
 
 RUN apk update && apk upgrade
-RUN apk add --no-cache build-base wget boost-dev 
+RUN apk add --no-cache build-base wget boost-dev openssl-dev 
 
 WORKDIR       /app
 COPY src      ./src
@@ -25,5 +25,5 @@ RUN make && rm -r crow
 FROM alpine as main
 COPY --from=build /app /
 EXPOSE 8080 
-RUN apk add --no-cache libstdc++ libgcc 
+RUN apk add --no-cache libstdc++ libgcc openssl 
 ENTRYPOINT ["/kisalt"]

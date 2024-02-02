@@ -15,7 +15,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 h1, a {
@@ -35,3 +35,29 @@ p {
   gap: 5px;
 }
 
+form {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+form input {
+  background: none;
+  font-size: 20px;
+  outline: none;
+  border: solid 1px #DFDFDF;
+  color: white;
+  padding: 10px;
+}
+
+form button {
+  border: none;
+  background: #101010;
+  padding: 10px;
+  font-size: 20px;
+  outline: none;
+  border: solid 1px #DFDFDF;
+  cursor: pointer;
+  color: white;
+}

@@ -1,6 +1,7 @@
 #pragma once
-#include <stdio.h>
+#include <openssl/sha.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string>
 #include <list>
 
