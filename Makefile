@@ -2,4 +2,4 @@ SRCS:=$(wildcard src/*.cpp)
 CC=g++
 
 kisalt: $(SRCS)
-	$(CC) -o $@ $^ -lcrypto 
+	$(CC) -o $@ $^ -lcrypto -ljsoncpp 

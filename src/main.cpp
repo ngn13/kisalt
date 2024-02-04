@@ -1,10 +1,10 @@
 #include <crow/settings.h>
 #include <crow/app.h>
+#include "config.hpp"
 #include "link.hpp"
+#include "log.hpp"
 #include <crow.h>
 #include <random>
-
-std::string envurl = nullptr==getenv("URL") ? "http://127.0.0.1:8080/" : getenv("URL");
 
 std::string join_url(std::string url) {
   if(envurl[envurl.length()-1] == '/')
@@ -15,7 +15,15 @@ std::string join_url(std::string url) {
 int main(){
   crow::SimpleApp app;
   app.loglevel(crow::LogLevel::Warning);
+  if(!envsave){
+    info("NOSAVE is set, not loading any saved links");
+    goto SKIP_LOAD;
+  }
+
+  if(!load_links())
+    info("No saved links, loading an empty list");
   
+SKIP_LOAD:
   CROW_ROUTE(app, "/add")([](const crow::request& req, crow::response& res){
     char* url = req.url_params.get("url");
 

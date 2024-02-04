@@ -47,13 +47,15 @@ form input {
   font-size: 20px;
   outline: none;
   border: solid 1px #DFDFDF;
+  border-radius: 5px;
   color: white;
   padding: 10px;
 }
 
 form button {
+  border-radius: 5px;
   border: none;
-  background: #101010;
+  background: none;
   padding: 10px;
   font-size: 20px;
   outline: none;

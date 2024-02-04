@@ -9,11 +9,22 @@ kisalt is a simple link shortener written with [Crow](https://github.com/CrowCpp
 You can easily deploy the app with docker and place it behind a proxy:
 ```bash
 docker run -d --restart=unless-stopped \
+    -v $PWD/data:/data                 \ 
     -p 127.0.0.1:8080:8080             \
     -e URL=https://k.example.com       \
     ghcr.io/ngn13/kisalt
 ```
-Change the `URL` accordingly.
+Change the `URL` accordingly. 
+
+To disable the saving the links, you can use the `NOSAVE` option.
+A volume is not needed when using this option:
+```bash
+docker run -d --restart=unless-stopped \
+    -p 127.0.0.1:8080:8080             \
+    -e URL=https://k.example.com       \
+    -e NOSAVE=1                        \
+    ghcr.io/ngn13/kisalt
+```
 
 ### Usage
 You can use the web interface to shorten links, or you can directly use the API:
@@ -22,5 +33,5 @@ curl https://k.example.com/add\?url=<url>
 ```
 
 ### Todo
-- Save links to a database
+- ~~Save links to a database~~
 - Better web UI
