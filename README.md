@@ -8,11 +8,11 @@ kisalt is a simple link shortener written with [Crow](https://github.com/CrowCpp
 ### Deploy
 You can easily deploy the app with docker and place it behind a proxy:
 ```bash
-docker run -d --restart=unless-stopped \
-    -v $PWD/data:/data                 \ 
-    -p 127.0.0.1:8080:8080             \
-    -e URL=https://k.example.com       \
-    ghcr.io/ngn13/kisalt
+docker run --restart=unless-stopped \
+     -p 127.0.0.1:8080:8080         \
+     -e URL=https://k.example.com   \
+     -v $PWD/data:/data             \
+     ghcr.io/ngn13/kisalt
 ```
 Change the `URL` accordingly. 
 
