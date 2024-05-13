@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>kisalt</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1200, initial-scale=1">
     <link href="/static/global.css" rel="stylesheet">
+    <noscript>
+      this website uses simple fetch requests to interact with the API,
+      enable JavaScript or send your requests directly to /add?url=[url]
+    </noscript>
   </head>
   <body>
     <main>
       <a href="https://github.com/ngn13/kisalt"><h1>kisalt</h1></a>
-      <p>a simple link shortener</p>
-      </br>
-      <div class="badges">
-        <img alt="GitHub License" src="https://img.shields.io/github/license/ngn13/kisalt">
-        <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/ngn13/kisalt">
-        <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/ngn13/kisalt/publish.yml">
-      </div>
+      <p id="msg">a simple link shortener</p>
       <form id="form">
-        <input id="url" placeholder="enter a URL" type="text" required>
-        <button id="btn" type="submit">submit</button>
+        <input id="url" placeholder="enter a link" type="text" required>
       </form>
     </main>
     <script src="/static/index.js"></script>

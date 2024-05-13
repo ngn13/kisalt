@@ -3,11 +3,90 @@
   padding: 0;
 }
 
+@keyframes colorAnimation {
+  100%,
+  0% {
+    color: rgb(255, 0, 0);
+  }
+  8% {
+    color: rgb(255, 127, 0);
+  }
+  16% {
+    color: rgb(255, 255, 0);
+  }
+  25% {
+    color: rgb(127, 255, 0);
+  }
+  33% {
+    color: rgb(0, 255, 0);
+  }
+  41% {
+    color: rgb(0, 255, 127);
+  }
+  50% {
+    color: rgb(0, 255, 255);
+  }
+  58% {
+    color: rgb(0, 127, 255);
+  }
+  66% {
+    color: rgb(0, 0, 255);
+  }
+  75% {
+    color: rgb(127, 0, 255);
+  }
+  83% {
+    color: rgb(255, 0, 255);
+  }
+  91% {
+    color: rgb(255, 0, 127);
+  }
+}
+
+@keyframes fullBorderAnimation {
+  100%,
+  0% {
+    border-color: rgb(255, 0, 0);
+  }
+  8% {
+    border-color: rgb(255, 127, 0);
+  }
+  16% {
+    border-color: rgb(255, 255, 0);
+  }
+  25% {
+    border-color: rgb(127, 255, 0);
+  }
+  33% {
+    border-color: rgb(0, 255, 0);
+  }
+  41% {
+    border-color: rgb(0, 255, 127);
+  }
+  50% {
+    border-color: rgb(0, 255, 255);
+  }
+  58% {
+    border-color: rgb(0, 127, 255);
+  }
+  66% {
+    border-color: rgb(0, 0, 255);
+  }
+  75% {
+    border-color: rgb(127, 0, 255);
+  }
+  83% {
+    border-color: rgb(255, 0, 255);
+  }
+  91% {
+    border-color: rgb(255, 0, 127);
+  }
+}
+
 body {
   font-family: monospace;
   padding: 10%;
   background: black;
-  text-align: center;
 }
 
 main {
@@ -15,52 +94,43 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  text-align: center;
 }
 
-h1, a {
+main h1, a {
+  animation-name: colorAnimation;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+
   font-size: 40px;
   color: white;
   text-decoration: none;
+  margin-bottom: 2px;
 }
 
-p {
+main p {
   font-size: 20px;
   color: #DFDFDF;
-}
-
-.badges {
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-}
-
-form {
-  gap: 5px;
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  width: 400px;
+  text-shadow: 0px 10px 20px rgba(90, 90, 90, 0.8);
+  margin-bottom: 12px;
 }
 
 form input {
-  background: none;
+  width: 400px;
+  background: black;
   font-size: 20px;
   outline: none;
-  border: solid 1px #DFDFDF;
+  border: solid 1.5px #505050;
   border-radius: 5px;
-  color: white;
+  color: #DFDFDF;
   padding: 10px;
 }
 
-form button {
-  border-radius: 5px;
-  border: none;
-  background: none;
-  padding: 10px;
-  font-size: 20px;
-  outline: none;
-  border: solid 1px #DFDFDF;
-  cursor: pointer;
+form input::placeholder {
   color: white;
+}
+
+form input:not(:placeholder-shown){
+  transition: .4s;
+  box-shadow: rgba(20, 20, 20, 0.19) 0px 10px 20px, rgba(30, 30, 30, 0.23) 0px 6px 6px;;
 }

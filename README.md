@@ -3,7 +3,7 @@
 ![](https://img.shields.io/github/repo-size/ngn13/kisalt)
 ![](https://img.shields.io/github/actions/workflow/status/ngn13/kisalt/publish.yml)
 
-kisalt is a simple link shortener written with [Crow](https://github.com/CrowCpp/Crow)
+kisalt is a dead simple link shortener written with in C++ using the [Crow](https://github.com/CrowCpp/Crow) web framework.
 
 ### Deploy
 You can easily deploy the app with docker and place it behind a proxy:
@@ -31,7 +31,3 @@ You can use the web interface to shorten links, or you can directly use the API:
 ```bash
 curl https://k.example.com/add\?url=<url>
 ```
-
-### Todo
-- ~~Save links to a database~~
-- Better web UI

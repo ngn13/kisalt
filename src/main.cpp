@@ -1,9 +1,7 @@
-#include <crow/settings.h>
-#include <crow/app.h>
+#include "crow_all.h"
 #include "config.hpp"
 #include "link.hpp"
 #include "log.hpp"
-#include <crow.h>
 #include <random>
 
 std::string join_url(std::string url) {
@@ -76,5 +74,6 @@ SKIP_LOAD:
     return res.end();
   });
 
+  info("Running on port 8080"); 
   app.port(8080).run();
 }

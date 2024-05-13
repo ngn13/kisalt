@@ -104,7 +104,7 @@ std::string add_url(std::string org) {
   memcpy(orgurl, org.c_str(), org.length());
   SHA1(orgurl, sizeof(orgurl)-1, hash);
 
-  char hashhex[SHA_DIGEST_LENGTH+SHA224_DIGEST_LENGTH];
+  char hashhex[SHA_DIGEST_LENGTH+SHA_DIGEST_LENGTH+1];
   char current[3];
 
   for(int i = 0; i < SHA_DIGEST_LENGTH; i++){
