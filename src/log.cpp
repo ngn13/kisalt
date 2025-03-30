@@ -1,26 +1,27 @@
-#include <cstdarg>
 #include "log.hpp"
+
+#include <cstdarg>
 #include <cstdio>
 #include <string>
 
-void error(std::string msg, ...){
+void error(std::string msg, ...) {
   va_list args;
   va_start(args, msg);
 
-  printf(BOLD RED "ERROR: " RESET);
+  printf(RED "[fail] " RESET);
   vprintf(msg.c_str(), args);
-  printf(RESET"\n");
-  
+  printf(RESET "\n");
+
   va_end(args);
 }
 
-void info(std::string msg, ...){
+void info(std::string msg, ...) {
   va_list args;
   va_start(args, msg);
 
-  printf(BOLD BLUE "INFO : " RESET);
+  printf(BLUE "[info] " RESET);
   vprintf(msg.c_str(), args);
-  printf(RESET"\n");
-  
+  printf(RESET "\n");
+
   va_end(args);
 }

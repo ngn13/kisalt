@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-@keyframes colorAnimation {
+@keyframes rainbow {
   100%,
   0% {
     color: rgb(255, 0, 0);
@@ -43,46 +43,6 @@
   }
 }
 
-@keyframes fullBorderAnimation {
-  100%,
-  0% {
-    border-color: rgb(255, 0, 0);
-  }
-  8% {
-    border-color: rgb(255, 127, 0);
-  }
-  16% {
-    border-color: rgb(255, 255, 0);
-  }
-  25% {
-    border-color: rgb(127, 255, 0);
-  }
-  33% {
-    border-color: rgb(0, 255, 0);
-  }
-  41% {
-    border-color: rgb(0, 255, 127);
-  }
-  50% {
-    border-color: rgb(0, 255, 255);
-  }
-  58% {
-    border-color: rgb(0, 127, 255);
-  }
-  66% {
-    border-color: rgb(0, 0, 255);
-  }
-  75% {
-    border-color: rgb(127, 0, 255);
-  }
-  83% {
-    border-color: rgb(255, 0, 255);
-  }
-  91% {
-    border-color: rgb(255, 0, 127);
-  }
-}
-
 body {
   font-family: monospace;
   padding: 10%;
@@ -98,7 +58,7 @@ main {
 }
 
 main h1, a {
-  animation-name: colorAnimation;
+  animation-name: rainbow;
   animation-iteration-count: infinite;
   animation-duration: 10s;
 

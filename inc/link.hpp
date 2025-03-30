@@ -21,4 +21,4 @@ struct Link {
 
 std::string add_url(std::string);
 std::string find_url(std::string);
-bool load_links();
+bool        load_links();

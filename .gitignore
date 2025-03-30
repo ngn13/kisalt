@@ -1,3 +1,5 @@
-src/crow_all.h
+.cache
+compile_commands.json
+inc/crow*
 kisalt
 data/

@@ -1,0 +1,15 @@
+services:
+  kisalt:
+    container_name: kisalt
+    image: ghcr.io/ngn13/kisalt:latest
+    restart: unless-stopped
+    environment:
+    - URL=https://k.example.com
+    #- NOSAVE=1
+    volumes:
+    - ./data:/data
+    ports:
+    - 80:8080
+    cap_drop:
+    - ALL
+    read_only: true
