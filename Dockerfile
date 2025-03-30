@@ -16,9 +16,9 @@ RUN rm -r src
 RUN rm -r inc
 
 # run the binary
-FROM alpine as main
+FROM alpine as ruuner
 
-COPY --from=build /app /
+COPY --from=builder /app /
 RUN apk add --no-cache libstdc++ libgcc libcrypto3 jsoncpp asio
 
 EXPOSE 8080
